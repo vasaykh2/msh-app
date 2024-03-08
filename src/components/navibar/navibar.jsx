@@ -1,5 +1,5 @@
-import React from "react";
-import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Navbar, Nav, Button, Container, Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import "./navibar.scss";
@@ -16,6 +16,10 @@ a,.navbar-brand, .navbar-nav, .nav-link {
 `;
 
 const Navibar = () => {
+  const [show, setshow] = useState(false);
+  const handleClose = () => setshow(false);
+  const handleShow = () => setshow(true);
+
   return (
     <>
       <Styles>
@@ -45,9 +49,7 @@ const Navibar = () => {
                   <Link to="/builder">Возможности</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to="/#pricing">
-                    Тарифы: div id="pr"
-                  </Link>
+                  <Link to="/#pricing">Тарифы: div id="pr"</Link>
                 </Nav.Link>
                 <Nav.Link>
                   <ScrollLink to="resources" smooth={true} duration={500}>
@@ -56,15 +58,40 @@ const Navibar = () => {
                 </Nav.Link>
               </Nav>
               <Nav>
-                <Button variant="primary" className="me-2">
+                <Button variant="primary" className="me-2" onClick={handleShow}>
                   Вход
                 </Button>
-                <Button variant="primary">Регистрация</Button>
+                 <Button variant="primary" >
+                  Регистрация
+                </Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </Styles>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Вход</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="fromBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else
+              </Form.Text>
+            </Form.Group>
+            <Form.Group controlId="fromBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter password" />
+            </Form.Group>
+            <Form.Group controlId="fromBasicCheckbox">
+              <Form.Check type="checkbox" label="Remember me" />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };
