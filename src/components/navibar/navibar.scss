@@ -1,0 +1,21 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  z-index: 1000;
+  max-height: 88px;
+}
+
+.container {
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.img-mailing {
+width: 44px;
+}
