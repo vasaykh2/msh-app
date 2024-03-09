@@ -6,14 +6,16 @@
   margin: 0;
   width: 100%;
   z-index: 1000;
-  max-height: 88px;
+  height: 88px;
+  flex-wrap: nowrap;
 }
 
-.container {
+.container-container {
   justify-content: space-between;
   margin: 0;
   width: 100%;
   max-width: none;
+  padding: 0;
 }
 
 .img-mailing {

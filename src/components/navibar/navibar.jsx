@@ -30,7 +30,7 @@ const Navibar = () => {
           bg="dark"
           variant="dark"
         >
-          <Container className="container">
+          <Container className="container-container">
             <Navbar.Brand className="brand">
               <img className="img-mailing" src={mailing} alt="Mailing" />
             </Navbar.Brand>
@@ -41,19 +41,21 @@ const Navibar = () => {
                   <Link to="/">Домой</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <ScrollLink to="howItWork" smooth={true} duration={200}>
-                    'Как это работает?'
+                  <ScrollLink to="howItWork" smooth={true} duration={220}>
+                    Как это работает?
                   </ScrollLink>
                 </Nav.Link>
                 <Nav.Link>
                   <Link to="/builder">Возможности</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to="/#pricing">Тарифы: div id="pr"</Link>
+                  <ScrollLink to="pricing" smooth={true} duration={220}>
+                    Тарифы
+                  </ScrollLink>
                 </Nav.Link>
                 <Nav.Link>
-                  <ScrollLink to="resources" smooth={true} duration={500}>
-                    'Ресурсы: <div id="resources"></div>'
+                  <ScrollLink to="resources" smooth={true} duration={220}>
+                    Ресурсы
                   </ScrollLink>
                 </Nav.Link>
               </Nav>
@@ -61,9 +63,7 @@ const Navibar = () => {
                 <Button variant="primary" className="me-2" onClick={handleShow}>
                   Вход
                 </Button>
-                 <Button variant="primary" >
-                  Регистрация
-                </Button>
+                <Button variant="primary">Регистрация</Button>
               </Nav>
             </Navbar.Collapse>
           </Container>

@@ -8,32 +8,36 @@ import "./slider.scss";
 
 const Slider = () => {
   return (
-    <Carousel id="howItWork">
-      <Carousel.Item className="carousel-item">
-        <img className="imaging d-block w-100" src={img1} alt="First slide" />
-        <Carousel.Caption>
-          <h3>MSHApp</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        </Carousel.Caption>
-        <div>djn</div>
-      </Carousel.Item>
-      <Carousel.Item className="carousel-item">
-        <img className="imaging d-block w-100" src={img2} alt="First slide" />
-        <Carousel.Caption>
-          <h3>MSHApp</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        </Carousel.Caption>
-        <div>djn</div>
-      </Carousel.Item>
-      <Carousel.Item className="carousel-item">
-        <img className="imaging d-block w-100" src={img3} alt="First slide" />
-        <Carousel.Caption>
-          <h3>MSHApp</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        </Carousel.Caption>
-        <div>djn</div>
-      </Carousel.Item>
-    </Carousel>
+    <div id="howItWork">
+      <h1>Как это работает?</h1>
+      <p>Сервис рассылки любому числу получателей</p>
+      <Carousel>
+        <Carousel.Item className="carousel-item">
+          <img className="imaging d-block w-100" src={img1} alt="First slide" />
+          <Carousel.Caption>
+            <h3>MSHApp</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </Carousel.Caption>
+          <div>djn</div>
+        </Carousel.Item>
+        <Carousel.Item className="carousel-item">
+          <img className="imaging d-block w-100" src={img2} alt="First slide" />
+          <Carousel.Caption>
+            <h3>MSHApp</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </Carousel.Caption>
+          <div>djn</div>
+        </Carousel.Item>
+        <Carousel.Item className="carousel-item">
+          <img className="imaging d-block w-100" src={img3} alt="First slide" />
+          <Carousel.Caption>
+            <h3>MSHApp</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </Carousel.Caption>
+          <div>djn</div>
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 };
 

@@ -1,0 +1,22 @@
+.container-container {
+  padding: 2rem 0;
+  display: flex;
+}
+
+.row-row {
+  margin: 0;
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+}
+
+.col-col {
+  padding: 0;
+  flex-grow: 0;
+  // flex-shrink: 1;
+  // flex-basis: 0%;
+}
+
+.card {
+  width: 18rem;
+}
