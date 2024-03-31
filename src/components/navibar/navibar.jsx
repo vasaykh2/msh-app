@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Button, Container, Modal, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
 import "./navibar.scss";
 import style from "styled-components";
 import mailing from "../../images/mailing.ico";
@@ -16,9 +17,11 @@ a,.navbar-brand, .navbar-nav, .nav-link {
 `;
 
 const Navibar = () => {
-  const [show, setshow] = useState(false);
-  const handleClose = () => setshow(false);
-  const handleShow = () => setshow(true);
+  const [showModal, setshowModal] = useState(false);
+  const handleCloseModal = () => setshowModal(false);
+  const handleShowModal = () => setshowModal(true);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -46,9 +49,6 @@ const Navibar = () => {
                   </ScrollLink>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to="/builder">Возможности</Link>
-                </Nav.Link>
-                <Nav.Link>
                   <ScrollLink to="pricing" smooth={true} duration={220}>
                     Тарифы
                   </ScrollLink>
@@ -58,18 +58,31 @@ const Navibar = () => {
                     Ресурсы
                   </ScrollLink>
                 </Nav.Link>
+                <Nav.Link>
+                  <Link to="/builder">Возможности</Link>
+                </Nav.Link>
               </Nav>
               <Nav>
-                <Button variant="primary" className="me-2" onClick={handleShow}>
+                <Button
+                  variant="primary"
+                  className="me-2"
+                  onClick={handleShowModal}
+                >
                   Вход
                 </Button>
-                <Button variant="primary">Регистрация</Button>
+                <Button
+                  variant="primary"
+                  className="me-2"
+                  onClick={() => navigate("/signup")}
+                >
+                  Регистрация
+                </Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </Styles>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Вход</Modal.Title>
         </Modal.Header>

@@ -9,7 +9,7 @@ import ProtectedRoute from "../../routes/protected-route";
 import ErrorNotificator from "../error-notificator/error-notificator";
 // import Navibar from "../../components/navibar/navibar";
 
-import './app.scss';
+import "./app.scss";
 
 const App = () => {
   // const path = useLocation().pathname;
@@ -21,7 +21,7 @@ const App = () => {
         <Route
           path="/signup"
           element={
-            <ProtectedRoute notAuth>
+            <ProtectedRoute notAuth={false}>
               <Signup />
             </ProtectedRoute>
           }
